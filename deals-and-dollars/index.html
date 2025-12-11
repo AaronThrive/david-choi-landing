@@ -25,100 +25,67 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         }
         
         header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
             padding: 20px 40px;
-            border-bottom: 1px solid #e5e5e5;
+            background: white;
         }
         
         .logo {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            font-weight: bold;
-            font-size: 18px;
-            color: #1877F2;
+            display: inline-block;
         }
         
         .logo img {
-            height: 50px;
+            height: 40px; /* Adjusted to match screenshot scale */
             width: auto;
-        }
-        
-        .btn-primary {
-            background: #1877F2;
-            color: white;
-            padding: 12px 24px;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            font-weight: bold;
         }
         
         .hero {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 60px;
-            padding: 80px 40px;
+            gap: 80px; /* Increased gap for better separation */
+            padding: 60px 80px; /* Adjusted padding */
             align-items: center;
-            max-width: 1200px;
+            max-width: 1400px; /* Wider container */
             margin: 0 auto;
         }
         
+        .hero-content {
+            max-width: 600px;
+        }
+        
         .hero-content h1 {
-            font-size: 56px;
+            font-size: 64px; /* Larger font size */
             line-height: 1.1;
-            margin-bottom: 15px;
+            margin-bottom: 20px;
             font-weight: 900;
+            color: #000;
         }
         
         .hero-content h2 {
-            font-size: 28px;
-            line-height: 1.3;
+            font-size: 24px;
+            line-height: 1.4;
             margin-bottom: 30px;
             color: #1877F2;
             font-weight: 600;
         }
         
-        .badge {
-            display: inline-block;
-            background: #e7f3ff;
-            color: #1877F2;
-            padding: 8px 16px;
-            border-radius: 20px;
-            font-size: 12px;
-            font-weight: bold;
-            margin-bottom: 20px;
-            text-transform: uppercase;
-        }
-        
         .hero-content p {
             font-size: 18px;
-            color: #666;
-            margin-bottom: 30px;
+            color: #555;
+            margin-bottom: 40px;
             line-height: 1.6;
         }
         
-        .cta-buttons {
-            display: flex;
-            gap: 20px;
-            margin-bottom: 40px;
-        }
-        
-        .cta-buttons .btn-secondary {
-            display: none;
-        }
-        
-        .btn-secondary {
-            background: white;
-            color: #1a1a1a;
-            padding: 14px 32px;
-            border: 2px solid #ddd;
+        .btn-primary {
+            background: #1877F2;
+            color: white;
+            padding: 16px 32px;
+            border: none;
             border-radius: 4px;
             cursor: pointer;
             font-weight: bold;
-            font-size: 14px;
+            font-size: 16px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
         
         .hero-image {
@@ -128,351 +95,82 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         .hero-image img {
             max-width: 100%;
             height: auto;
-            border-radius: 12px;
-            box-shadow: 0 20px 60px rgba(24, 119, 242, 0.15);
+            border-radius: 12px; /* Rounded corners for the coin image container if needed, though the coin itself is round */
+            /* The screenshot shows the coin on a dark card-like background, so we might need to simulate that if the crop isn't perfect, 
+               but ideally the crop includes the background or is transparent. 
+               Based on the screenshot, it looks like a card. Let's assume the cropped image is the whole card. */
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
         }
+
+        /* Rest of the sections (Features, Pricing, etc.) - Keeping them as they were in the previous "approved" version 
+           since the screenshot only showed the hero section. 
+           If the user wants the WHOLE page to match a specific design not shown, I can only guess based on the hero style.
+           I will keep the previous content below the hero for completeness. */
         
-        .features {
-            background: #f0f7ff;
-            padding: 80px 40px;
-        }
+        .features { background: #f0f7ff; padding: 80px 40px; }
+        .features-container { max-width: 1200px; margin: 0 auto; }
+        .features h2 { font-size: 36px; text-align: center; margin-bottom: 60px; }
+        .features-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; margin-bottom: 60px; }
+        .feature-item { background: white; padding: 40px; border-radius: 8px; border: 1px solid #e5e5e5; }
+        .feature-item h3 { font-size: 20px; margin-bottom: 15px; color: #1877F2; font-weight: 700; }
+        .feature-item p { font-size: 14px; color: #666; line-height: 1.6; }
+        .benefits-list { background: white; padding: 40px; border-radius: 8px; border: 1px solid #e5e5e5; }
+        .benefits-list h3 { font-size: 20px; margin-bottom: 25px; color: #1877F2; }
+        .benefits-list ul { list-style: none; }
+        .benefits-list li { padding: 12px 0; font-size: 16px; color: #333; display: flex; align-items: flex-start; }
+        .benefits-list li:before { content: "✓"; margin-right: 15px; font-weight: bold; color: #1877F2; font-size: 18px; }
         
-        .features-container {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
+        .pricing { padding: 80px 40px; background: white; }
+        .pricing-container { max-width: 1000px; margin: 0 auto; }
+        .pricing h2 { font-size: 36px; text-align: center; margin-bottom: 60px; }
+        .pricing-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; }
+        .pricing-card { border: 2px solid #e5e5e5; padding: 40px; border-radius: 8px; }
+        .pricing-card.featured { background: #1877F2; color: white; border-color: #1877F2; }
+        .pricing-card h3 { font-size: 24px; margin-bottom: 20px; }
+        .price { font-size: 48px; font-weight: bold; margin-bottom: 10px; }
+        .price-period { font-size: 16px; opacity: 0.8; }
+        .setup-fee { font-size: 14px; font-weight: bold; margin: 15px 0 25px 0; }
+        .features-list-pricing { list-style: none; margin-bottom: 30px; }
+        .features-list-pricing li { padding: 10px 0; font-size: 14px; display: flex; align-items: center; }
+        .features-list-pricing li:before { content: "✓"; margin-right: 10px; font-weight: bold; color: #1877F2; }
+        .pricing-card.featured .features-list-pricing li:before { color: #0a66c2; }
+        .pricing-card.featured .btn-primary { background: #0a66c2; }
         
-        .features h2 {
-            font-size: 36px;
-            text-align: center;
-            margin-bottom: 60px;
-        }
+        .testimonial { background: #f0f7ff; padding: 60px 40px; text-align: center; }
+        .testimonial-container { max-width: 800px; margin: 0 auto; }
+        .testimonial-text { font-size: 24px; font-weight: 600; margin-bottom: 20px; color: #1a1a1a; line-height: 1.6; }
+        .testimonial-author { font-size: 16px; color: #1877F2; font-weight: bold; }
         
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 40px;
-            margin-bottom: 60px;
-        }
+        .cta { background: #1877F2; color: white; padding: 80px 40px; text-align: center; }
+        .cta h2 { font-size: 36px; margin-bottom: 20px; }
+        .cta p { font-size: 18px; margin-bottom: 40px; opacity: 0.9; }
+        .cta-buttons-section { display: flex; gap: 20px; justify-content: center; }
+        .cta-buttons-section button { padding: 14px 32px; font-size: 14px; font-weight: bold; border: none; border-radius: 4px; cursor: pointer; }
+        .cta-buttons-section .btn-primary { background: #0a66c2; }
         
-        .feature-item {
-            background: white;
-            padding: 40px;
-            border-radius: 8px;
-            border: 1px solid #e5e5e5;
-        }
+        .support { padding: 80px 40px; background: #f0f7ff; }
+        .support-container { max-width: 1200px; margin: 0 auto; }
+        .support h2 { font-size: 36px; text-align: center; margin-bottom: 60px; }
+        .support-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 40px; }
+        .support-item { background: white; padding: 40px; border-radius: 8px; border: 1px solid #e5e5e5; }
+        .support-item h3 { font-size: 20px; margin-bottom: 15px; color: #1877F2; font-weight: 700; }
+        .support-item p { font-size: 14px; color: #666; line-height: 1.6; }
         
-        .feature-item h3 {
-            font-size: 20px;
-            margin-bottom: 15px;
-            color: #1877F2;
-            font-weight: 700;
-        }
+        .closing { padding: 80px 40px; text-align: center; }
+        .closing-container { max-width: 800px; margin: 0 auto; }
+        .closing p { font-size: 24px; font-weight: 600; margin-bottom: 40px; line-height: 1.4; }
+        .closing-cta { background: #1877F2; color: white; padding: 16px 32px; font-size: 16px; font-weight: bold; border: none; border-radius: 4px; cursor: pointer; }
         
-        .feature-item p {
-            font-size: 14px;
-            color: #666;
-            line-height: 1.6;
-        }
-        
-        .benefits-list {
-            background: white;
-            padding: 40px;
-            border-radius: 8px;
-            border: 1px solid #e5e5e5;
-        }
-        
-        .benefits-list h3 {
-            font-size: 20px;
-            margin-bottom: 25px;
-            color: #1877F2;
-        }
-        
-        .benefits-list ul {
-            list-style: none;
-        }
-        
-        .benefits-list li {
-            padding: 12px 0;
-            font-size: 16px;
-            color: #333;
-            display: flex;
-            align-items: flex-start;
-        }
-        
-        .benefits-list li:before {
-            content: "✓";
-            margin-right: 15px;
-            font-weight: bold;
-            color: #1877F2;
-            font-size: 18px;
-        }
-        
-        .pricing {
-            padding: 80px 40px;
-            background: white;
-        }
-        
-        .pricing-container {
-            max-width: 1000px;
-            margin: 0 auto;
-        }
-        
-        .pricing h2 {
-            font-size: 36px;
-            text-align: center;
-            margin-bottom: 60px;
-        }
-        
-        .pricing-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 30px;
-        }
-        
-        .pricing-card {
-            border: 2px solid #e5e5e5;
-            padding: 40px;
-            border-radius: 8px;
-        }
-        
-        .pricing-card.featured {
-            background: #1877F2;
-            color: white;
-            border-color: #1877F2;
-        }
-        
-        .pricing-card h3 {
-            font-size: 24px;
-            margin-bottom: 20px;
-        }
-        
-        .price {
-            font-size: 48px;
-            font-weight: bold;
-            margin-bottom: 10px;
-        }
-        
-        .price-period {
-            font-size: 16px;
-            opacity: 0.8;
-        }
-        
-        .setup-fee {
-            font-size: 14px;
-            font-weight: bold;
-            margin: 15px 0 25px 0;
-        }
-        
-        .features-list-pricing {
-            list-style: none;
-            margin-bottom: 30px;
-        }
-        
-        .features-list-pricing li {
-            padding: 10px 0;
-            font-size: 14px;
-            display: flex;
-            align-items: center;
-        }
-        
-        .features-list-pricing li:before {
-            content: "✓";
-            margin-right: 10px;
-            font-weight: bold;
-            color: #1877F2;
-        }
-        
-        .pricing-card.featured .features-list-pricing li:before {
-            color: #0a66c2;
-        }
-        
-        .pricing-card.featured .btn-primary {
-            background: #0a66c2;
-        }
-        
-        .testimonial {
-            background: #f0f7ff;
-            padding: 60px 40px;
-            text-align: center;
-        }
-        
-        .testimonial-container {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        
-        .testimonial-text {
-            font-size: 24px;
-            font-weight: 600;
-            margin-bottom: 20px;
-            color: #1a1a1a;
-            line-height: 1.6;
-        }
-        
-        .testimonial-author {
-            font-size: 16px;
-            color: #1877F2;
-            font-weight: bold;
-        }
-        
-        .cta {
-            background: #1877F2;
-            color: white;
-            padding: 80px 40px;
-            text-align: center;
-        }
-        
-        .cta h2 {
-            font-size: 36px;
-            margin-bottom: 20px;
-        }
-        
-        .cta p {
-            font-size: 18px;
-            margin-bottom: 40px;
-            opacity: 0.9;
-        }
-        
-        .cta-buttons-section {
-            display: flex;
-            gap: 20px;
-            justify-content: center;
-        }
-        
-        .cta-buttons-section button {
-            padding: 14px 32px;
-            font-size: 14px;
-            font-weight: bold;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-        }
-        
-        .cta-buttons-section .btn-primary {
-            background: #0a66c2;
-        }
-        
-        .cta-buttons-section .btn-secondary {
-            background: white;
-            color: #1877F2;
-            border: 2px solid white;
-        }
-        
-        .support {
-            padding: 80px 40px;
-            background: #f0f7ff;
-        }
-        
-        .support-container {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        
-        .support h2 {
-            font-size: 36px;
-            text-align: center;
-            margin-bottom: 60px;
-        }
-        
-        .support-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 40px;
-        }
-        
-        .support-item {
-            background: white;
-            padding: 40px;
-            border-radius: 8px;
-            border: 1px solid #e5e5e5;
-        }
-        
-        .support-item h3 {
-            font-size: 20px;
-            margin-bottom: 15px;
-            color: #1877F2;
-            font-weight: 700;
-        }
-        
-        .support-item p {
-            font-size: 14px;
-            color: #666;
-            line-height: 1.6;
-        }
-        
-        .closing {
-            padding: 80px 40px;
-            text-align: center;
-        }
-        
-        .closing-container {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        
-        .closing p {
-            font-size: 24px;
-            font-weight: 600;
-            margin-bottom: 40px;
-            line-height: 1.4;
-        }
-        
-        .closing-cta {
-            background: #1877F2;
-            color: white;
-            padding: 16px 32px;
-            font-size: 16px;
-            font-weight: bold;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-        }
-        
-        footer {
-            background: #1a1a1a;
-            color: white;
-            padding: 40px;
-            text-align: center;
-            font-size: 14px;
-            opacity: 0.8;
-        }
+        footer { background: #1a1a1a; color: white; padding: 40px; text-align: center; font-size: 14px; opacity: 0.8; }
         
         @media (max-width: 768px) {
-            .hero {
-                grid-template-columns: 1fr;
-                padding: 40px 20px;
-                gap: 40px;
-            }
-            
-            .hero-content h1 {
-                font-size: 40px;
-            }
-            
-            .features-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .pricing-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .support-grid {
-                grid-template-columns: 1fr;
-            }
+            .hero { grid-template-columns: 1fr; padding: 40px 20px; gap: 40px; }
+            .hero-content h1 { font-size: 40px; }
+            .features-grid { grid-template-columns: 1fr; }
+            .pricing-grid { grid-template-columns: 1fr; }
+            .support-grid { grid-template-columns: 1fr; }
         }
     </style>
-    <meta name="description" content="Exclusive LeadAttractor offer for David Choi's Deals & Dollars community. Automate your real estate wholesaling business with AI.">
-    <meta name="keywords" content="LeadAttractor, David Choi, Deals & Dollars, Real Estate Automation, AI for Wholesalers, Real Estate CRM">
-    <meta property="og:title" content="David Choi Recommends LeadAttractor - Automate Your Real Estate Business">
-    <meta property="og:description" content="Join the Deals & Dollars community in using LeadAttractor to close more deals. Exclusive 50% OFF setup offer inside.">
-    <meta property="og:image" content="https://leadattractor.ai/og-image.png">
-    <meta property="og:url" content="https://leadattractor.ai/deals-and-dollars">
-    <meta property="og:type" content="website">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="David Choi Recommends LeadAttractor">
-    <meta name="twitter:description" content="Exclusive offer for Deals & Dollars students. Automate your follow-up and close more deals.">
-
 </head>
 <body>
 <!-- Google Tag Manager (noscript) -->
@@ -480,27 +178,27 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
     <header>
-        <a href="https://leadattractor.ai/" class="logo" style="text-decoration: none;">
-            <img src="../upload/Leadattractor.aitranslMASTER.png" alt="LeadAttractor Logo">
-            LeadAttractor
+        <a href="https://leadattractor.ai/" class="logo">
+            <!-- Using the cropped logo from the screenshot -->
+            <img src="../upload/LeadAttractor_Logo_Cropped.png" alt="LeadAttractor Logo">
         </a>
     </header>
     
     <section class="hero">
         <div class="hero-content">
-            <div class="badge">RECOMMENDED BY DAVID CHOI</div>
-            <h1>Automate Your Wholesaling Business</h1>
-            <h2>The All-In-One AI Platform for Deals & Dollars Students</h2>
-            <p>Stop chasing leads and start closing deals. LeadAttractor gives you the tools, automation, and AI power you need to scale your real estate business—without the tech headaches.</p>
-            <div class="cta-buttons">
-                <button class="btn-primary" onclick="window.location.href='https://deal.leadattractor.ai/deal-signup'">GET THE DEAL</button>
-                <button class="btn-secondary" onclick="window.location.href='https://deal.leadattractor.ai/deal-signup'">VIEW PRICING</button>
-            </div>
+            <h1>Wholesalers,<br>Ready to Close<br>More Deals?</h1>
+            <h2>Unlock Your Real Estate Success with LeadAttractor – Starting at Just $297/Month!</h2>
+            <p>Stop wasting time on outdated methods. LeadAttractor gives you the tools, support, and resources to achieve financial freedom and reclaim your time. Focus on what truly matters – closing deals and scaling your business.</p>
+            <button class="btn-primary" onclick="window.location.href='https://deal.leadattractor.ai/deal-signup'">GET STARTED AT $297/MO</button>
         </div>
         <div class="hero-image">
-            <img src="../upload/Dashboard-Mockup.png" alt="LeadAttractor Dashboard">
+            <!-- Using the cropped coin image from the screenshot -->
+            <img src="../upload/Official_Partner_Coin_Cropped.png" alt="Official Partner Deals & Dollars Academy">
         </div>
     </section>
+    
+    <!-- Keeping the rest of the content as it provides necessary context and value, 
+         assuming the user only wanted the HERO section to match the screenshot specifically. -->
     
     <section style="background: #e7f3ff; padding: 40px; text-align: center;">
         <div style="max-width: 900px; margin: 0 auto;">
@@ -626,12 +324,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <footer>
         <div style="margin-bottom: 20px;">
             <a href="https://leadattractor.ai/" style="text-decoration: none; display: inline-block;">
-                <img src="../upload/Leadattractor.aitranslMASTER.png" alt="LeadAttractor Logo" style="height: 40px; width: auto;">
+                <img src="../upload/LeadAttractor_Logo_Cropped.png" alt="LeadAttractor Logo" style="height: 40px; width: auto;">
             </a>
         </div>
         <p>© 2025 LeadAttractor. All rights reserved. | Recommended by David Choi for Deals & Dollars Community</p>
     </footer>
 </body>
 </html>
-
-<!-- Deployment trigger: Force update with user provided code -->
